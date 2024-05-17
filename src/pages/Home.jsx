@@ -30,7 +30,7 @@ export const Home = () => {
   }, [error, addToast]);
 
   return (
-    <div className="h-screen w-full bg-background p-10">
+    <div className="w-full p-10">
       <Navigation />
       {loading && <Loading />}
       <div className="flex flex-col items-center justify-center">
