@@ -9,7 +9,7 @@ export const Toast = ({ message, status, id }) => {
   return (
     <div
       className={classNames(
-        'flex max-w-fit items-center justify-center gap-2 rounded p-2 animate-enter',
+        'flex max-w-fit items-center justify-center gap-2 rounded p-2 animate-enter z-10',
         {
           'bg-green-100': status === 'success',
           'bg-yellow-100': status === 'warning',
