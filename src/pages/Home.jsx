@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 import { usePhotos } from '@/hooks';
 import { useToast } from '@/stores';
-import { Image, Loading, Navigation } from '@/components';
+import { Image, Loading } from '@/components';
 
 export const Home = () => {
   const [page, setPage] = useState(1);
@@ -30,8 +30,7 @@ export const Home = () => {
   }, [error, addToast]);
 
   return (
-    <div className="w-full p-10">
-      <Navigation />
+    <div className="w-full px-10">
       {loading && <Loading />}
       <div className="flex flex-col items-center justify-center">
         <div className="flex flex-wrap justify-center gap-7 px-4 pb-4 pt-12">

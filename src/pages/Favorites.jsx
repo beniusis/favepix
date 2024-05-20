@@ -1,11 +1,10 @@
 import { useFavorite } from '@/stores';
-import { Image, Navigation } from '@/components';
+import { Image } from '@/components';
 
 export const Favorites = () => {
   const favorites = useFavorite((state) => state.favorites);
   return (
-    <div className="h-screen w-full bg-background p-10">
-      <Navigation />
+    <div className="h-screen w-full bg-background px-10">
       <div className="mt-12 flex flex-col items-center justify-center">
         {favorites.length === 0 && (
           <p className="text-center text-2xl font-bold text-text">No Favorite Photos</p>
