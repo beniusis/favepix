@@ -1,6 +1,6 @@
 import { create } from 'zustand';
 
-const DEFAULT_TIMEOUT = 5000;
+const DEFAULT_TIMEOUT = 2000;
 
 const createToast = (message, status) => {
   return {
