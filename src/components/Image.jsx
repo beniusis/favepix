@@ -1,11 +1,10 @@
-import { useState } from 'react';
+import { forwardRef } from 'react';
 import { useFavorite } from '@/stores';
-import classNames from 'classnames';
-import PropTypes from 'prop-types';
 import { useToast } from '@/stores';
+import PropTypes from 'prop-types';
 
-export const Image = ({ data }) => {
-  const [hovered, setHovered] = useState(false);
+export const Image = forwardRef(function Image(props, ref) {
+  const { data } = props;
 
   const isFavorite = useFavorite((state) => state.isFavorite(data.id));
   const addFavorite = useFavorite((state) => state.addFavorite);
@@ -31,30 +30,19 @@ export const Image = ({ data }) => {
 
   return (
     <div
-      className="relative max-h-52 max-w-72 cursor-alias"
+      className="group relative max-h-52 max-w-72 cursor-alias"
       title="Click to view the full-size image"
-      onMouseEnter={() => setHovered(true)}
-      onMouseLeave={() => setHovered(false)}
       onClick={handleImageClick}
+      ref={ref}
     >
       <img
-        className={classNames('size-full rounded-lg object-cover shadow-lg', {
-          'brightness-50': hovered
-        })}
+        className="size-full rounded-lg object-cover shadow-lg group-hover:brightness-50"
         src={data.src.large}
         alt={data.alt}
         loading="lazy"
       />
 
-      <div
-        className={classNames(
-          'absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 flex-col items-center justify-center w-full gap-5 p-4',
-          {
-            hidden: !hovered,
-            flex: hovered
-          }
-        )}
-      >
+      <div className="absolute left-1/2 top-1/2 hidden w-full -translate-x-1/2 -translate-y-1/2 flex-col items-center justify-center gap-5 p-4 group-hover:flex">
         <div className="flex flex-col items-center justify-center gap-1">
           <h2 className="text-center text-base font-black capitalize text-white">
             {data.alt || 'Untitled'}
@@ -73,7 +61,7 @@ export const Image = ({ data }) => {
       </div>
     </div>
   );
-};
+});
 
 Image.propTypes = {
   data: PropTypes.object.isRequired

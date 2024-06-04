@@ -1,11 +1,14 @@
 import { useFavorite } from '@/stores';
-import { Image } from '@/components';
+import { Header, Image } from '@/components';
 
 export const Favorites = () => {
   const favorites = useFavorite((state) => state.favorites);
+
   return (
-    <div className="h-screen w-full bg-background px-10">
-      <div className="mt-12 flex flex-col items-center justify-center">
+    <>
+      <Header />
+
+      <main className="mt-12 flex flex-col items-center justify-center">
         {favorites.length === 0 && (
           <p className="text-center text-2xl font-bold text-text">No Favorite Photos</p>
         )}
@@ -15,7 +18,7 @@ export const Favorites = () => {
               <Image className="grow basis-52" data={photo} key={photo.id} />
             ))}
         </div>
-      </div>
-    </div>
+      </main>
+    </>
   );
 };
