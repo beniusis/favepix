@@ -7,14 +7,14 @@ export const Navigation = () => {
 
   return (
     <>
-      <div className="mt-10 flex items-center justify-center gap-2">
+      <nav className="mt-10 flex items-center justify-center gap-2">
         <NavLink to="/" active={isActiveRoute('/')}>
           Home
         </NavLink>
         <NavLink to="/favorites" active={isActiveRoute('/favorites')}>
           Favorites
         </NavLink>
-      </div>
+      </nav>
       <Outlet />
     </>
   );

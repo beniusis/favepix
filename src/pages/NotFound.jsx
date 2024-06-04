@@ -11,7 +11,7 @@ export const NotFound = () => {
       </div>
       <Link
         to="/"
-        className="rounded bg-accent px-4 py-2 text-sm font-semibold text-white duration-300 ease-out hover:scale-105 active:scale-95 sm:text-base"
+        className="rounded bg-pexels-green px-4 py-2 text-sm font-semibold text-white shadow-3d duration-300 ease-out hover:shadow-none active:scale-95 active:duration-150 sm:text-base"
       >
         Go Home
       </Link>

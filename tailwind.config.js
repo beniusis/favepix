@@ -17,7 +17,11 @@ export default {
         background: '#ebece9',
         primary: '#464738',
         secondary: '#b7baa0',
-        accent: '#8c9060'
+        accent: '#8c9060',
+        'pexels-green': '#05A081'
+      },
+      boxShadow: {
+        '3d': '3px 3px 0px 0px rgba(0, 0, 0, 1)'
       }
     }
   },

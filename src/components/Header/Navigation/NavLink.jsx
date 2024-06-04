@@ -5,11 +5,13 @@ import classNames from 'classnames';
 export const NavLink = ({ to, children, active }) => {
   return (
     <Link
-      className={classNames('rounded-md px-2 py-1 cursor-default', {
-        'bg-secondary text-white font-semibold': active,
-        'bg-inherit text-text font-normal cursor-pointer hover:bg-secondary hover:text-white':
-          !active
-      })}
+      className={classNames(
+        'rounded-md px-2 py-1 cursor-default duration-300 ease-in-out text-text',
+        {
+          'bg-pexels-green font-semibold': active,
+          'bg-inherit font-normal cursor-pointer hover:bg-pexels-green': !active
+        }
+      )}
       to={to}
     >
       {children}
