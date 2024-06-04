@@ -8,7 +8,7 @@ import './assets/index.css';
 ReactDOM.createRoot(document.getElementById('root')).render(
   <StrictMode>
     <Toasts />
-    <Router basename="/">
+    <Router basename="/favepix/">
       <Routes>
         <Route index element={<Home />} />
         <Route path="/favorites" element={<Favorites />} />
