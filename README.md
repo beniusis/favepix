@@ -34,6 +34,9 @@
 
 ### Screenshots
 
+![](./screenshots/main.png)
+![](./screenshots/favorites.png)
+
 ## Setup the Development Environment
 
 ### Cloning repository
